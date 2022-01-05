@@ -1,4 +1,3 @@
-package com.kd.session01.basics;
 
 public class assignment {
 
