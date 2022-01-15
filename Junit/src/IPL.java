@@ -11,17 +11,17 @@ class Player implements Comparable<Player>{
     int matches;
     int runs;
     double average;
-    double strike_rate;
+    double strikeRate;
     int wickets;
 
-    Player(String name,String team,String role,int matches,int runs,double average,double strike_rate,int wickets){
+    Player(String name,String team,String role,int matches,int runs,double average,double strikeRate,int wickets){
         this.name = name;
         this.team = team;
         this.role = role;
         this.matches = matches;
         this.runs  =runs;
         this.average = average;
-        this.strike_rate  = strike_rate;
+        this.strikeRate  = strikeRate;
         this.wickets = wickets;
     }
 
@@ -182,7 +182,7 @@ class IPL{
     }
 
     // finding bowler who took 40 wickets.
-    public static void SearchBowlerAtleastFortyWickets(List<Player> listOfPlayers, String team){
+    public static void searchBowlerAtleastFortyWickets(List<Player> listOfPlayers, String team){
 
         for(Player p: listOfPlayers){
             if(p.getWicket() >= 40 && p.getTeam().equals(team) && p.getRole().equals("BOWLER")){
