@@ -104,13 +104,14 @@ class RunWicketComparator implements Comparator<Player>{
 
 class IPL{
 
-
+    // for putting all players into list of player objects.
     public static List<Player> putPlayers(){
 
         List<Player> listOfPlayers = new ArrayList<Player>();
 
         try{
-            BufferedReader reader = new BufferedReader(new FileReader("/home/shantanu/IdeaProjects/Junit/src/IPL_2021_data.csv"));
+
+            BufferedReader reader = new BufferedReader(new FileReader("./src/IPL_2021_data.csv"));
 
             // for passing the header
             reader.readLine();
@@ -129,6 +130,7 @@ class IPL{
         return listOfPlayers;
     }
 
+    // for fixing the match between team and stadium and storing in a csv file
     public static void fixMatch(){
         final int totalTeams = 8;
         String[] listOfTeams = new String[totalTeams];
@@ -179,6 +181,7 @@ class IPL{
 
     }
 
+    // finding bowler who took 40 wickets.
     public static void SearchBowlerAtleastFortyWickets(List<Player> listOfPlayers, String team){
 
         for(Player p: listOfPlayers){
@@ -188,6 +191,7 @@ class IPL{
         }
     }
 
+    // searching a player by it's first name last name or full name
     public static void searchPlayer(List<Player> listOfPlayers,String query){
         List<Player> playerSearchList = listOfPlayers.stream().filter(p -> p.getName().equals(query) || p.getName().split(" ")[0].equals(query) || p.getName().split(" ")[1].equals(query)).collect(Collectors.toList());
 
@@ -197,6 +201,7 @@ class IPL{
 
     }
 
+    // find highest wicket taken or runs scored in a given team
     public static void findHighest(List<Player> listOfPlayers,String team){
         int higestWicketByPlayer = 0;
         int highestRunScoredByPerson = 0;
@@ -222,6 +227,8 @@ class IPL{
         System.out.print("Highest run scorer is " + String.valueOf(maxRunScorerName));
     }
 
+    // finding top three batsmen bowler and all rounder
+    // all rounder is found using a cumulative score of runs and wickets.
     public static void findTopThree(List<Player> listOfPlayers){
 
         List<Player> battingList = listOfPlayers.stream().filter(p -> p.getRole().equals("BATSMAN")).collect(Collectors.toList());
@@ -252,6 +259,16 @@ class IPL{
             System.out.println(allRounderList.get(i).getName() + " " + allRounderList.get(i).cumulativeScore());
         }
     }
+
+    // if all team used best batsmen then we have to find winner team
+
+    /*
+        idea:
+            1) took 11 best batsmen from all team
+            2) add all runs scored by them
+            3) highest runs scored will be the winner
+
+    */
 
     public String findBestBatsmenTeam(List<Player> listOfPlayers){
         int totalPlayerInATeam = 11;
@@ -302,6 +319,9 @@ class IPL{
         return String.valueOf(winnerTeam);
     }
 
+    /*
+        next gen player is taken by criteria like matchbar runbar cumulative score bar
+    */
     public static void showNextGenPlayer(List<Player> listOfPlayers){
 
         int matchBar = 20;
@@ -338,7 +358,7 @@ class IPL{
 
 
     public static void main(String[] args){
-        putPlayers();
+        // here all functions can be called
     }
 }
 
