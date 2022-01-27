@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+        xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation = "http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="vehicle" class="com.example.Car"></bean>
+    <bean id="modelcar" class="com.example.Car" init-method="init"></bean>
+    <bean id="destroy" class="com.example.Car" destroy-method="destroy"></bean>
+    <bean id="propertycar" class="com.example.Car">
+        <property name="mileage" value="100kmpl" ></property>
+    </bean>
+    <bean id="constructorcar" class="com.example.Car">
+        <constructor-arg value="toyota"></constructor-arg>
+    </bean>
+    <bean id="scopecar" class="com.example.Car" scope="singleton"></bean>
+
+<!--    Commented to prevent circular dependencies-->
+<!--    <bean id="one" class="com.example.CircularDependancy1">-->
+<!--        <constructor-arg index="0" ref="two"></constructor-arg>-->
+<!--    </bean>-->
+<!--    <bean id="two" class="com.example.CircularDependancy2">-->
+<!--        <constructor-arg index="0" ref="one"></constructor-arg>-->
+<!--    </bean>-->
+</beans>
