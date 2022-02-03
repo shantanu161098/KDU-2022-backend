@@ -12,8 +12,8 @@ public class MainApp {
         ActorService actorService = context.getBean(ActorService.class);
 
         Long queryId = 1L;
-        String queryFirstName = "whoopi";
-        String queryLastName = "cage";
+        String queryFirstName = "%whoopi%";
+        String queryLastName = "%cage%";
         System.out.println("\n =============================================== \n");
         System.out.println(ObjectUtils.convertToJson(actorService.getActorById(queryId)));
         System.out.println("\n =============================================== \n");
