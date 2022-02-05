@@ -1,0 +1,68 @@
+[
+	{
+		"type": "BUY",
+		"data": {
+			"coin": "BTC",
+			"quantity": 20,
+			"wallet_address": "0x5d6632f7b2c147ad7529c849e084eaac"
+		}
+	},
+
+	{
+		"type": "SELL",
+		"data": {
+			"coin": "BTC",
+			"quantity": 10,
+			"wallet_address": "0x5d6632f7b2c147ad7529c849e084eaac"
+		}
+	},
+
+	{
+		"type": "BUY",
+		"data": {
+			"coin": "BTC",
+			"quantity": 30,
+			"wallet_address": "0x5d6632f7b2c147ad7529c849e084eaac"
+		}
+	},
+
+	{
+		"type": "SELL",
+		"data": {
+			"coin": "BTC",
+			"quantity": 40,
+			"wallet_address": "0x5d6632f7b2c147ad7529c849e084eaac"
+		}
+	},
+
+
+	{
+		"type": "UPDATE_PRICE",
+		"data": {
+			"coin":"BTC",
+			"price": 0.01
+		}
+	},
+
+	{
+		"type": "ADD_VOLUME",
+		"data": {
+			"coin": "BTC",
+			"volume": 10000
+		}
+	},
+
+	{
+		"type": "BUY",
+		"data": {
+			"coin": "BTC",
+			"quantity": 30,
+			"wallet_address": "0xd2cff6a9676f29f2209656c8606a9069"
+		}
+	}
+
+
+
+]
+	
+
